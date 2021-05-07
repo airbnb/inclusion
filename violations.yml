@@ -1,0 +1,37 @@
+---
+- terms:
+  - whitelist
+  - white-list
+  alternatives:
+  - allowlist
+
+- terms:
+  - blacklist
+  - black-list
+  alternatives:
+  - denylist
+
+- terms:
+  - grandfather
+  alternatives:
+  - exempted
+
+- terms:
+  - dummy
+  alternatives:
+  - placeholder
+  - fake
+  - stub
+
+# This term is appropriate when used in the context of stress testing.
+- terms:
+  - redline
+  - red-line
+  - redlining
+  alternatives:
+  - annotate
+
+- terms:
+  - slave
+  alternatives:
+  - replica
