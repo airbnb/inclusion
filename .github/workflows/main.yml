@@ -26,6 +26,9 @@ jobs:
       with:
         ruby-version: 2.6.x
 
+    - name: Install bundler
+      run: gem install bundler
+
     - name: Bundle install
       run: bundle install
 
