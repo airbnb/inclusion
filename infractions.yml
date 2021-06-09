@@ -32,8 +32,8 @@
   - stub
 
 # The term "redlining" is rooted in discriminatory practices in the United States of denying
-# services like mortgages or insurance based on geographical locations. Describe annotations on
-# designs using different terminology.
+# services like mortgages or insurance based on geographical locations. Prefer describing
+# annotations on designs using different terminology.
 - terms:
   - redline
   - red-line
@@ -42,7 +42,7 @@
   - annotate
 
 # "Master–slave" is an offensive and exclusionary metaphor that cannot be detached from American
-# history. Describe a hierarchical relationship between nodes or objects with different terms.
+# history. Prefer describing a hierarchical relationship between nodes more precisely.
 - terms:
   - slave
   alternatives:
