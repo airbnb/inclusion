@@ -47,3 +47,8 @@
   - slave
   alternatives:
   - replica
+- terms:
+  - master
+  alternatives:
+  - primary
+  - main
