@@ -47,3 +47,11 @@
   - slave
   alternatives:
   - replica
+  
+# Similar to "Master-slave", prefer describing a hierarchical relationship between nodes more precisely.
+- terms:
+  - master
+  - mastership
+  alternatives:
+  - leader
+  - leadership
