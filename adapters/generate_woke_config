@@ -1,0 +1,43 @@
+#!/usr/bin/env ruby
+
+# A script that converts the Airbnb infractions YAML file format to one that Woke
+# (https://github.com/get-woke/woke) understands. This script outputs the file to STDOUT.
+#
+# Usage: ./generate-woke-config "non-inclusive-terms.yml" > woke.yml
+
+require 'yaml'
+
+infractions_file = ARGV[0]
+raise ArgumentError, 'Must specify a path to a YAML file' if infractions_file.nil?
+raise ArgumentError, "#{infractions_file} does not exist" unless File.exist? infractions_file
+
+infractions = YAML.safe_load(File.read(infractions_file))
+
+# Created based on https://github.com/get-woke/woke/blob/c6fb17e6f017305fce6847a7b3067221827841a5/pkg/rule/default.yaml
+DEFAULT_WOKE_RULES = [
+  'whitelist',
+  'blacklist',
+  'master-slave',
+  'slave',
+  'grandfathered',
+  'man-hours',
+  'sanity',
+  'dummy',
+  'guys',
+  'whitebox',
+  'blackbox',
+].freeze
+
+# We override all of Woke's default rules using this approach: https://github.com/get-woke/woke/tree/c6fb17e6f017305fce6847a7b3067221827841a5#disabling-default-rules
+# In this way we only lint for rules defined in the infractions file.
+disabled_default_rules = DEFAULT_WOKE_RULES.map { |rule_name| { 'name' => rule_name } }
+
+# We add the terms for which we want to lint, making a unique rule name for each term. The name
+# of the rule is not used outside of Woke, so it can be anything that is unique.
+rules = infractions.map.with_index do |item, index|
+  item['name'] = "airbnb-#{index}"
+  item
+end
+
+woke_config = { 'rules' => disabled_default_rules + rules }
+puts woke_config.to_yaml
