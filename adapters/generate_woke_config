@@ -3,7 +3,7 @@
 # A script that converts the Airbnb infractions YAML file format to one that Woke
 # (https://github.com/get-woke/woke) understands. This script outputs the file to STDOUT.
 #
-# Usage: ./generate-woke-config "non-inclusive-terms.yml" > woke.yml
+# Usage: ./generate-woke-config "infractions.yml" > woke.yml
 
 require 'yaml'
 
