@@ -18,3 +18,13 @@ task :validate_data do
   end
   raise error_message unless error_message.empty?
 end
+
+# Ensures that the script to generate a woke config file produces valid YAML.
+task :validate_woke_adapter do
+  require 'yaml'
+  infractions_file = File.join(__dir__, 'infractions.yml')
+  generate_script = File.join(__dir__, 'adapters/generate_woke_config')
+  output = `#{generate_script} #{infractions_file}`
+  woke_config = YAML.load(output)
+  raise 'Woke config contains no entries' unless woke_config['rules'].length > 1
+end
