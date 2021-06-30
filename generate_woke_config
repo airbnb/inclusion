@@ -1,9 +1,13 @@
 #!/usr/bin/env ruby
 
-# A script that converts the Airbnb infractions YAML file format to one that Woke
+# A script that adapts the Airbnb infractions YAML file format to one that Woke
 # (https://github.com/get-woke/woke) understands. This script outputs the file to STDOUT.
 #
 # Usage: ./generate-woke-config "infractions.yml" > woke.yml
+#
+# Airbnb welcomes well-tested contributions of adapters for new tools and systems that promote
+# belonging. The presence of an adapter for a third-party tool in this repository does not
+# necesarily mean that Airbnb endorses the third-party tool.
 
 require 'yaml'
 

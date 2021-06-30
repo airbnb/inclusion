@@ -23,7 +23,7 @@ end
 task :validate_woke_adapter do
   require 'yaml'
   infractions_file = File.join(__dir__, 'infractions.yml')
-  generate_script = File.join(__dir__, 'adapters/generate_woke_config')
+  generate_script = File.join(__dir__, 'generate_woke_config')
   output = `#{generate_script} #{infractions_file}`
   woke_config = YAML.load(output)
   if woke_config['rules'].nil? || woke_config['rules'].empty?
