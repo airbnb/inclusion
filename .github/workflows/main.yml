@@ -37,3 +37,6 @@ jobs:
 
     - name: Validate data completeness
       run: bundle exec rake validate_data
+
+    - name: Validate script to generate Woke (https://github.com/get-woke/woke) config
+      run: bundle exec rake validate_woke_adapter
