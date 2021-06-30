@@ -8,5 +8,9 @@ We are publicly sharing `infractions.yml`. `infractions.yml` is a data file of t
 
 The data file format is agnostic to any particular tool and is meant to be general enough to be adapted to any tool.
 
+## Adapters
+
+The `adapters` folder includes shell scripts to adapt the Airbnb infractions YAML file to third-party tools. Airbnb welcomes contributions for new tools and systems that promote belonging. An adapter for a third-party tool does not necesarily mean that Airbnb endorses the third-party tool.
+
 ## Contributing
 Please open an issue on this GitHub repository. Contributors are expected to follow the [Code of Conduct](https://github.com/airbnb/.github/blob/main/CODE_OF_CONDUCT.md).
