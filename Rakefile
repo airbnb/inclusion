@@ -26,5 +26,7 @@ task :validate_woke_adapter do
   generate_script = File.join(__dir__, 'adapters/generate_woke_config')
   output = `#{generate_script} #{infractions_file}`
   woke_config = YAML.load(output)
-  raise 'Woke config contains no entries' unless woke_config['rules'].length > 1
+  if woke_config['rules'].nil? || woke_config['rules'].empty?
+    raise 'Woke config contains no entries'
+  end
 end
