@@ -22,4 +22,4 @@ Please open an issue on this GitHub repository. Contributors are expected to fol
 
 ## About this repository
 
-The list of non-inclusive terms in this repository was created and will evolve in close collaboration with Airbnb employees who are members of the affected communities.
+The list of non-inclusive terms in this repository was created by and will evolve in close collaboration with Airbnb employees who are members of the affected communities.
